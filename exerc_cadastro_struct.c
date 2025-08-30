@@ -7,7 +7,7 @@
 typedef struct 
 
 {
-    // Criar ponteiro para alocação dinâmica do vetor de idades
+  
 
     int idade;
     char nome[50];
@@ -44,8 +44,12 @@ int main(int argc, char* argv[])
     coleta_nome(n, pessoa);
     coleta_endereco(n, pessoa);
     coleta_idade(n, pessoa);
-    printf("%-20s %-30s %-5s\n", "Nome", "Endereço", "Idade"); // Formatação em tabelas
-    printf("-----------------------------------------------------------\n");
+
+        // O tamanho dos alinhamentos abaixo são definidos de acordo com
+        // o tamanho ou numero de caracteres das strings
+
+    printf("%-20.20s %-30.25s %-6s\n", "Nome", "Endereço", "Idade"); // Formatação em tabelas
+    printf("--------------------------------------------------------------\n");
     imprime_dados(n, pessoa);
     
     return 0;
@@ -140,7 +144,5 @@ void imprime_dados(int n, cadastro pessoa[n])
     for(int i = 0; i < n; i++ ) 
     
     {
-        printf("%-20s %-30s %-5d\n", pessoa[i].nome, pessoa[i].endereco, pessoa[i].idade);
+        printf("%-20.20s %-30.25s %-6d anos\n", pessoa[i].nome, pessoa[i].endereco, pessoa[i].idade);
     }
-
-}
